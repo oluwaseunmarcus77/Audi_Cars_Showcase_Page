@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="Audi.css">
+  <title>Audi Page</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="brand">Audi R*</a>
+      <ul class="menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">Garage</a></li>
+        <li><a href="">News</a></li>
+        <li><a href="" class="btn">Purchase</a></li>
+      </ul>
+      <div class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+    <div class="header-body">
+      <h1>Join The Jorney</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima exercitationem iusto, illum cum, illo placeat. Minus doloribus neque
+      </p>
+    </div>
+  </header>
+
+  <section class="about">
+    <div class="heading">
+      <h2>
+        Take a journey, <br />
+        bend space
+      </h2>
+      <p>The R8 can Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, incidunt explicabo, id, exercitationem aspernatur dolores ut omnis labore et excepturi praesentium eaque veniam, corrupti fugit iste.</p>
+    </div>
+    <div class="infos">
+        <div class="info">
+          <img src="icon1.png" alt="icon" />
+          <div>
+            <h3>Agility</h3>
+            <p>Built for speed, with a 5.2 liter V10 engine</p>
+          </div>
+        </div>
+      <div class="info">
+        <img src="icon2.png" alt="icon" />
+        <div>
+          <h3>Performance</h3>
+          <p>
+            Accelerating from zero to 60 mph in 3.2s
+          </p>
+        </div>
+      </div>
+      <div class="info">
+        <img src="icon3.png" alt="icon" />
+        <div>
+          <h3>Cutting Edge</h3>
+          <p>
+            Sharing half of its parts with the R8 LMS racecar
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="specs">
+      <div>
+        <div class="specs-header">
+          <h2>Tech Specs</h2>
+          <span>Engine</span>
+        </div>
+        <ul>
+          <li>
+            <span>Egine displacement</span>
+            <span>5204</span>
+          </li>
+          <li>
+            <span>Maximum power</span>
+            <span>601.4 bhp @ 8250 rpm</span>
+          </li>
+          <li>
+            <span>Maximum torque</span>
+            <span>560 Nm @ 6500 rpm</span>
+          </li>
+          <li>
+            <span>Turning radius</span>
+            <span>5.9 m</span>
+          </li>
+          <li>
+            <span>No. of cylinder</span>
+            <span>10</span>
+          </li>
+          <li>
+            <span>Drive Type</span>
+            <span>AWD</span>
+          </li>
+          <li>
+            <span>Turbo Charger</span>
+            <span>No</span>
+          </li>
+          <li>
+            <span>Super Charger</span>
+            <span>Yes</span>
+          </li>
+          <li>
+            <span>Fuel Supply</span>
+            <span>Direct injection</span>
+          </li>
+        </ul>
+      </div>
+  </section>
+
+  <section class="panels">
+    <div class="panels-sm">
+      <div class="panel">
+        <div>
+          <div class="icon">
+            <i class="fas fa-fire"></i>
+          </div>
+          <h2>Power and speed unleashed</h2>
+          <a href="#">
+            <span>Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="panel"></div>
+      <div class="panel"></div>
+      <div class="panel">
+        <div>
+          <div class="icon">
+            <i class="fas fa-tint"></i>
+          </div>
+          <h2>Respectful to enviroment</h2>
+        </div>
+      </div>
+    </div>
+    <div class="panel-lg"></div>
+  </section>
+
+  <section class="car-stats">
+    <div class="stats">
+      <div>
+        <h1
+          class="counter"
+          data-target="206"
+          data-speed="10"
+        >0
+        </h1>
+        <h1>kmph</h1>
+        <h5>Top Speed</h5>
+      </div>
+      <div>
+        <h1
+          class="counter"
+          data-target="7"
+          data-speed="500"
+        >0
+        </h1>
+        <h1>gears</h1>
+        <h5>Gear Box</h5>
+      </div>
+      <div>
+        <h1
+          class="counter"
+          data-target="473"
+          data-speed="1"
+        >0
+        </h1>
+        <h1>hp</h1>
+        <h5>Horse Power</h5>
+      </div>
+    </div>
+    <div class="car">
+      <div class="circle">
+        <img src="car.png" alt="car" />
+        <div class="inner-md-circle"></div>
+        <div class="inner-sm-circle"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    
+    //Navbar
+    const menu = document.querySelector('.menu');
+    const menuBtn = document.querySelector('.menu-btn');
+
+    //Add click event
+    menuBtn.addEventListener('click', () => {
+      //Toggle menu open class
+      menu.classList.toggle('menu-open');
+    });
+
+    //Stats Counter
+    const stats = document.querySelector('.stats');
+    const counter = document.querySelectorAll(".counter");
+    let bol = false;
+
+    /*Get stats section offset from the top of the page + the stats element height*/
+    const sectionOffset = stats.offsetTop + stats.offsetHeight;
+
+    /*Start the counter when the page is scrolled to the stats section*/
+    window.addEventListener("scroll", () => {
+      /*Get page ofsset from top + the whole screen height*/
+      const pageOffset = window.innerHeight + pageYOffset;
+      /*Run the updatecount function if the page is scrolled past the stats section, and run only once*/
+      if(pageOffset > sectionOffset && bol === false) {
+        //Select all counters
+        counter.forEach((counter) => {
+          function updateCount() {
+            /*Set variables and overwrite them evry time with the '+' shortcut*/
+            const target = +counter.getAttribute('data-target');
+            const speed = +counter.getAttribute('data-speed');
+            const count =counter.innerText;
+
+            //Check if target is rached
+            if(count < target) {
+              //Increment
+              counter.innerText = count + 1;
+              //Call function every ms
+              setTimeout(updateCount, speed);
+              //When the target is reached
+            } else {
+              //Stop counting 
+              counter.innerText = target;
+            }
+          }
+          //Run the updateCount function
+          updateCount();
+          /*Run the function only once by breaking one of the conditions in the if statement*/
+          /* This stops the updateCount function from running everytime you scroll past this section*/
+          bol = true;
+        });
+      }
+    });
+  </script>
+</body>
+</html>
